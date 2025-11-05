@@ -78,6 +78,8 @@
         <p><b>Esc:</b> Stop exploration</p>
         <p><b>G:</b> Start audio guide</p>
         <p><b>P:</b> Stop audio guide</p>
+        <p class="spray-hint"><b>Left Click:</b> Spray paint!</p>
+        <p class="spray-hint"><b>V:</b> Toggle spray mode</p>
       </div>
     </div>
 
@@ -87,6 +89,38 @@
     </div>
 
     <div id="painting-info"></div>
+
+    <!-- Graffiti Spray Paint UI -->
+    <div id="spray-crosshair">+</div>
+
+    <div id="spray-controls">
+      <h3>Spray Paint</h3>
+      <div class="control-group">
+        <label>Color:</label>
+        <div id="color-picker">
+          <div class="color-swatch" data-color="#ff0000" style="background: #ff0000;"></div>
+          <div class="color-swatch" data-color="#00ff00" style="background: #00ff00;"></div>
+          <div class="color-swatch" data-color="#0000ff" style="background: #0000ff;"></div>
+          <div class="color-swatch" data-color="#ffff00" style="background: #ffff00;"></div>
+          <div class="color-swatch" data-color="#ff00ff" style="background: #ff00ff;"></div>
+          <div class="color-swatch" data-color="#00ffff" style="background: #00ffff;"></div>
+          <div class="color-swatch" data-color="#ffffff" style="background: #ffffff;"></div>
+          <div class="color-swatch" data-color="#000000" style="background: #000000;"></div>
+          <div class="color-swatch" data-color="#ff8800" style="background: #ff8800;"></div>
+          <div class="color-swatch" data-color="#ff1493" style="background: #ff1493;"></div>
+        </div>
+      </div>
+      <div class="control-group">
+        <label>Size: <span id="size-value">0.5</span></label>
+        <input type="range" id="spray-size" min="0.2" max="2.0" step="0.1" value="0.5">
+      </div>
+      <div class="control-group">
+        <label>Opacity: <span id="opacity-value">0.7</span></label>
+        <input type="range" id="spray-opacity" min="0.1" max="1.0" step="0.1" value="0.7">
+      </div>
+      <button id="clear-graffiti">Clear All Graffiti</button>
+      <button id="toggle-spray">Toggle Spray Mode</button>
+    </div>
 
     <script type="module" src="/main.js"></script>
   </body>

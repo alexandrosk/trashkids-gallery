@@ -45,4 +45,6 @@ export const setupFloor = (scene) => {
   floorPlane.position.y = -Math.PI;
 
   scene.add(floorPlane);
+
+  return floorPlane;
 };

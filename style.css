@@ -383,3 +383,129 @@ canvas {
 #audio_controls button:hover {
   background-color: rgba(52, 58, 125, 0.8);
 }
+
+/* Graffiti Spray Paint Styles */
+#spray-crosshair {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 1000;
+  font-weight: bold;
+  display: none;
+}
+
+#spray-crosshair.active {
+  display: block;
+}
+
+#spray-controls {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background-color: rgba(35, 37, 88, 0.9);
+  border-radius: 15px;
+  padding: 20px;
+  color: #f2c641;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+  min-width: 200px;
+  z-index: 100;
+}
+
+#spray-controls h3 {
+  margin: 0 0 15px 0;
+  font-size: 1.5em;
+  text-align: center;
+  color: #f2c641;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#spray-controls .control-group {
+  margin-bottom: 15px;
+}
+
+#spray-controls label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#color-picker {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.color-swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.color-swatch:hover {
+  transform: scale(1.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.color-swatch.selected {
+  border-color: #f2c641;
+  box-shadow: 0 0 15px rgba(242, 198, 65, 0.8);
+}
+
+#spray-controls input[type="range"] {
+  width: 100%;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+#spray-controls button {
+  width: 100%;
+  background-color: rgba(52, 58, 125, 0.8);
+  color: #f2c641;
+  border: 2px solid #2323be;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1em;
+}
+
+#spray-controls button:hover {
+  background-color: rgba(52, 58, 125, 1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#spray-controls button:active {
+  transform: scale(0.98);
+}
+
+#toggle-spray {
+  background-color: rgba(255, 100, 100, 0.8);
+  border-color: #ff0000;
+}
+
+#toggle-spray.active {
+  background-color: rgba(100, 255, 100, 0.8);
+  border-color: #00ff00;
+}
+
+/* Update info panel controls hint */
+#info-content p.spray-hint {
+  color: #ff1493;
+  font-weight: bold;
+  margin-top: 10px;
+}

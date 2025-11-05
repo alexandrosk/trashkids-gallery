@@ -8,7 +8,8 @@ export const setupRendering = (
   renderer,
   paintings,
   controls,
-  walls
+  walls,
+  spraySystem = null
 ) => {
   const clock = new THREE.Clock();
 
@@ -16,6 +17,11 @@ export const setupRendering = (
     const delta = clock.getDelta();
 
     updateMovement(delta, controls, camera, walls);
+
+    // Update spray paint system if available
+    if (spraySystem) {
+      spraySystem.update(delta);
+    }
 
     const distanceThreshold = 8;
 

@@ -16,6 +16,8 @@ import { setupVR } from "./modules/VRSupport.js";
 import { loadStatueModel } from "./modules/statue.js";
 import { loadBenchModel } from "./modules/bench.js";
 import { loadCeilingLampModel } from "./modules/ceilingLamp.js";
+import { SprayPaintSystem } from "./modules/sprayPaint.js";
+import { setupSprayUI } from "./modules/sprayUI.js";
 
 let { camera, controls, renderer } = setupScene();
 
@@ -40,8 +42,6 @@ setupEventListeners(controls);
 
 clickHandling(renderer, camera, paintings);
 
-setupRendering(scene, camera, renderer, paintings, controls, walls);
-
 loadStatueModel(scene);
 
 loadBenchModel(scene);
@@ -49,3 +49,20 @@ loadBenchModel(scene);
 loadCeilingLampModel(scene);
 
 setupVR(renderer);
+
+// Setup Spray Paint System
+const spraySystem = new SprayPaintSystem(scene, camera, renderer);
+
+// Add all sprayable surfaces
+spraySystem.addSprayableGroup(walls); // Add all walls
+spraySystem.addSprayable(floor); // Add floor
+spraySystem.addSprayable(ceiling); // Add ceiling
+
+// Setup spray paint UI controls
+setupSprayUI(spraySystem);
+
+// Setup rendering with spray system
+setupRendering(scene, camera, renderer, paintings, controls, walls, spraySystem);
+
+// Export spray system
+export { spraySystem };

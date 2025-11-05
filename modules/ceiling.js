@@ -54,4 +54,6 @@ export const createCeiling = (scene, textureLoader) => {
   ceilingPlane.position.y = 10;
 
   scene.add(ceilingPlane);
+
+  return ceilingPlane;
 };
