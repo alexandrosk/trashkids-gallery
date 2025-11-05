@@ -40,7 +40,8 @@ setupPlayButton(controls);
 
 setupEventListeners(controls);
 
-clickHandling(renderer, camera, paintings);
+// Disabled click handling for paintings - no more links opening
+// clickHandling(renderer, camera, paintings);
 
 loadStatueModel(scene);
 
@@ -57,6 +58,11 @@ const spraySystem = new SprayPaintSystem(scene, camera, renderer);
 spraySystem.addSprayableGroup(walls); // Add all walls
 spraySystem.addSprayable(floor); // Add floor
 spraySystem.addSprayable(ceiling); // Add ceiling
+
+// Add paintings as sprayable - now you can vandalize the artwork!
+paintings.forEach(painting => {
+  spraySystem.addSprayable(painting);
+});
 
 // Setup spray paint UI controls
 setupSprayUI(spraySystem);
